@@ -1,0 +1,3 @@
+# Librerie esterne usate dal progetto (installazione: pip install -r requirements.txt)
+# matplotlib serve solo per disegnare grafi e grafici della pagina HTML.
+matplotlib
