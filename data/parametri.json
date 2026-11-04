@@ -1,0 +1,60 @@
+{
+  "nota": "Valori di progetto. Le fonti complete, con link e data di consultazione, sono nel rapporto del project work. Abitanti in nodi.csv: ISTAT, popolazione residente al 1/1/2025. Furgoni NON refrigerati a noleggio GIORNALIERO (servizio stagionale): tariffe pubbliche Hertz Italia, gruppi C4 ('Ford Transit 280S') e A4 ('Doblo Cargo Maxi'), modelli 'o simile'. Capacita' in cassette 60x40x24 calcolate a strati sulle misure del vano: Q1 = 60 (Ford Transit Custom 280S L1, brochure Ford Italia MY2027: 2602 x 1392 tra i passaruota x 1427 mm -> 12 per strato x 5 strati); Q2 = 50 (Fiat Doblo' Maxi/XL: lunghezza al pianale 2160 mm, listino Fiat Professional 2022; altezza 1243 mm, sito Fiat; larghezza tra i passaruota 1229 mm da fonte non ufficiale -> 10 per strato x 5 strati). Totale giro 55 cassette: piu' di Q2 (servono due furgoni), non oltre Q1. Consumi: Transit Custom 280S 2.0 EcoBlue 110 CV 7,1 l/100 km WLTP (brochure Ford Italia, valore provvisorio); Doblo' 1.5 BlueHDi 100 circa 6,0 l/100 km, ricavato dal valore massimo di CO2 WLTP dichiarato (159 g/km) con 2,64 kg di CO2 per litro di gasolio. Tempo massimo di consegna 60 minuti: ipotesi prudente, estremo inferiore della finestra di 1-2 ore per il preraffreddamento indicata dal Ministero dell'Agricoltura dell'Ontario. Gasolio 2,238 €/l: Mimit, prezzo medio nazionale self, rete stradale, aggiornamento 03/11/2026. Costo orario autista 26,30 €/h: Ministero del Lavoro e delle Politiche Sociali, Decreto direttoriale n. 135 del 19/12/2025, costo medio orario del lavoro, CCNL Logistica, trasporto merci e spedizione, gennaio 2026, livello D2, personale viaggiante senza discontinuità. Tempo di scarico: ipotesi.",
+  "indirizzo_deposito": "Az. Agricola S. Anna, Via Eugenio Villoresi 140, 21019 Somma Lombardo (VA)",
+  "cassette_totali_giro": 55,
+  "capacita_veicolo_grande": 60,
+  "capacita_veicolo_piccolo": 50,
+  "tempo_scarico_minuti": 10,
+  "criterio_ottimizzazione": "minuti",
+  "prezzi": {
+    "prezzo_gasolio_eur_l": 2.238,
+    "costo_orario_autista": 26.3,
+    "veicolo_grande": {
+      "modello": "Ford Transit 280S (o simile) – Hertz gruppo C4",
+      "tariffa_giornaliera": 74.81,
+      "km_inclusi_giorno": 200,
+      "consumo_l_100km": 7.1
+    },
+    "veicolo_piccolo": {
+      "modello": "Fiat Doblò Cargo Maxi (o simile) – Hertz gruppo A4",
+      "tariffa_giornaliera": 51.52,
+      "km_inclusi_giorno": 200,
+      "consumo_l_100km": 6.0
+    }
+  },
+  "sensibilita": [
+    {
+      "parametro": "costo_orario_autista",
+      "descrizione": "Costo orario dell'autista",
+      "unita": "€/h",
+      "da": 15,
+      "a": 40,
+      "passo": 1
+    },
+    {
+      "parametro": "prezzo_gasolio_eur_l",
+      "descrizione": "Prezzo del gasolio",
+      "unita": "€/l",
+      "da": 1.5,
+      "a": 3.0,
+      "passo": 0.1
+    },
+    {
+      "parametro": "veicolo_piccolo.tariffa_giornaliera",
+      "descrizione": "Noleggio giornaliero del furgone piccolo",
+      "unita": "€/giorno",
+      "da": 20,
+      "a": 80,
+      "passo": 2
+    },
+    {
+      "parametro": "veicolo_grande.tariffa_giornaliera",
+      "descrizione": "Noleggio giornaliero del furgone grande",
+      "unita": "€/giorno",
+      "da": 40,
+      "a": 160,
+      "passo": 4
+    }
+  ],
+  "tempo_massimo_consegna_minuti": 60
+}
