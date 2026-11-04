@@ -21,6 +21,6 @@ Progetto in corso di sviluppo.
 - `rilevazione/verifica_istat_distanze.csv`: confronto tra le distanze di
   Google Maps e la matrice ufficiale ISTAT delle distanze tra comuni
   (`minuti_istat_TEP` = tempo effettivo di percorrenza, con traffico).
-  Non è letto dal programma: documenta il controllo dei dati.
+  È letto da `src/verifica_distanze.py`, che riassume il confronto nella pagina.
 
 Le fonti complete, con link e data di consultazione, sono nel rapporto.
