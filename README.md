@@ -42,8 +42,8 @@ Solo Python 3 con la libreria standard.
 ## Test (cartella `tests/`)
 
 Test automatici con il modulo `unittest` della libreria standard, un file
-per modulo. Per ora c'è `test_domande.py`, che controlla la ripartizione
-delle cassette. Si eseguono dalla cartella principale con:
+per modulo. Ci sono i test di `domande.py`, `istanza.py`,
+`verifica_distanze.py` e `percorsi.py`. Si eseguono dalla cartella principale con:
 
 ```
 python3 -m unittest discover tests
