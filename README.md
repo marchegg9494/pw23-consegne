@@ -21,6 +21,30 @@ Progetto in corso di sviluppo.
 - `rilevazione/verifica_istat_distanze.csv`: confronto tra le distanze di
   Google Maps e la matrice ufficiale ISTAT delle distanze tra comuni
   (`minuti_istat_TEP` = tempo effettivo di percorrenza, con traffico).
-  È letto da `src/verifica_distanze.py`, che riassume il confronto nella pagina.
+  È letto da `src/verifica_distanze.py`, che ne calcola il riepilogo.
 
 Le fonti complete, con link e data di consultazione, sono nel rapporto.
+
+## Codice (cartella `src/`)
+
+Solo Python 3 con la libreria standard.
+
+- `domande.py`: ripartisce le cassette del giro tra i clienti in proporzione
+  agli abitanti, con il metodo dei resti più grandi (risultato: 7, 9, 4, 13, 22).
+- `istanza.py`: legge i file di `data/` in un unico dizionario e controlla che
+  i dati siano completi e rispettino le condizioni della traccia (un veicolo
+  grande basta per tutta la domanda, uno piccolo no).
+- `verifica_distanze.py`: confronta le distanze rilevate con la matrice ISTAT,
+  separando le tratte tra clienti da quelle con il deposito.
+- `percorsi.py`: funzioni comuni ai due scenari per calcolare km, minuti,
+  carico e orari di arrivo di un giro.
+
+## Test (cartella `tests/`)
+
+Test automatici con il modulo `unittest` della libreria standard, un file
+per modulo. Per ora c'è `test_domande.py`, che controlla la ripartizione
+delle cassette. Si eseguono dalla cartella principale con:
+
+```
+python3 -m unittest discover tests
+```
